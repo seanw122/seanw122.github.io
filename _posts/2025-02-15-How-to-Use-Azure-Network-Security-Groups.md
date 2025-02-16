@@ -53,7 +53,7 @@ Destination Port = Any
 Action = Deny
 {% endhighlight %}
 
-The problem with this is that no traffic is getting to port 22 on that IP address. This is because the priority is set to a higher priority than the other rule allowing traffic to port 22. Priority 1000 is higher than 1001.
+The problem with this is that no traffic is getting to any port on that IP address. This is because the priority is set to a higher priority than the other rule allowing traffic to port 22. Priority 1000 is higher than 1001.
 
 > **Note:** NSG rules have a priority from 100 to 4096. The lower the number, the higher the priority!
 
