@@ -66,6 +66,10 @@ github:
 include:
   - "_pages"
 
+search: true
+lunr:
+  search_within_pages: true
+  search_full_content: true
 
 # Defaults
 defaults:

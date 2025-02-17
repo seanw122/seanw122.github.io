@@ -1,7 +1,7 @@
 ---
-layout: posts
 title:  "How to Use Azure Network Security Groups"
 date:   2025-02-15 22:38:11 -0600
+last_modified_at: 2025-02-17 12:17:00 -0600
 categories:
   - Articles
 tags:

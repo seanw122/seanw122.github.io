@@ -1,8 +1,13 @@
 ---
 layout: posts
 title:  "Azure VMs Marked for Deletion"
-date:   2021-02-23 15:09:00 +0000
-categories: Terraform, Azure, Virtual Machines
+date:   2020-07-23 15:09:00 -0600
+categories:
+  - Articles
+tags: 
+  - Terraform
+  - Azure
+  - Virtual Machines
 ---
 
 ## Are You Serious?!?

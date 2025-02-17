@@ -1,8 +1,8 @@
 ---
 # layout: page
 title: About
-permalink: /about/
 classes: wide
+permalink: /about-sean-whitesell 
 description: About Sean Whitesell, President of SkyForge Consulting, Microsoft MVP in Azure and Developer Technologies, Public Speaker, and Leader of Tulsa .NET User Group
 ---
 

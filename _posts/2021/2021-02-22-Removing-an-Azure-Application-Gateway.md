@@ -1,8 +1,13 @@
 ---
-layout: posts
 title:  "Removing an Azure Application Gateway"
-date:   2021-02-23 15:09:00 +0000
-categories: PowerShell, Azure, Application Gateway
+date:   2021-02-23 15:09:00 -0600
+last_modified_at: 2025-02-17 00:00:00 -0600
+categories:
+  - Articles
+tags: 
+  - PowerShell
+  - Azure
+  - Application Gateway
 ---
 
 While working with Terraform scripts I created many Azure Application Gateways. Sometime after they were created I would delete them as they were only needed to prove my scripts were working with Azure DevOps. I was using Terraform functions and special *magic* to get things just right. Then I noticed one of my App Gateways refused to delete.

@@ -1,8 +1,9 @@
 ---
-layout: posts
 title:  "Terraform + Azure Availability Zones"
-date:   2021-02-23 15:09:00 +0000
-categories: 
+date:   2021-02-23 15:09:00 -0600
+categories:
+  - Articles
+tags: 
   - Terraform
   - Azure
   - Availability Zones
