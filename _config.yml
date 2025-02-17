@@ -153,7 +153,7 @@ author:
 # Build settings
 markdown: kramdown
 show_excerpts: true
-repository: "jguadagno/jguadagno.github.io"
+repository: "seanw122/seanw122.github.io"
 include: ["_pages"]
 highlighter: rouge
 

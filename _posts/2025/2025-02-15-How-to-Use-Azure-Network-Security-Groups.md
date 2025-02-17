@@ -33,7 +33,7 @@ When an NSG is associated with the subnet, the rules then apply to all traffic i
 
 In an NSG, rules are either inbound or outbound and have a Source and a Destination. If a rule is inbound and has a destination IP of that of an associated subnet, then the inbound network traffic is subjected to this rule. Consider this rule in our example.
 
-``` verilog
+``` c#
 Priority = 1001
 Direction = Inbound
 Source = Any
