@@ -33,7 +33,7 @@ github_username:  seanw122
 user_group: https://www.meetup.com/tulsadevelopers-net
 timezone: America/Chicago
 breadcrumbs: true
-
+permalink: /:year/:month/:day/:title
 
 # Build settings
 # theme: minima
@@ -43,9 +43,35 @@ breadcrumbs: true
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+- jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+- jekyll-redirect-from
+# - jekyll-gist
+# - jekyll-seo-tag
+# - jekyll-avatar
+# - jekyll-mentions
+# - jekyll-include-cache
+# - jemoji
 
 show_downloads: false
 # google_analytics: [Your Google Analytics tracking ID]
+github:
+  repository_url: ""
+
+
+include:
+  - "_pages"
+
+# plugins:
+#   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+#   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+#   - jekyll-redirect-from
+#   - jekyll-gist
+#   - jekyll-seo-tag
+#   - jekyll-avatar
+#   - jekyll-mentions
+#   - jekyll-include-cache
+#   - jemoji
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,9 +1,12 @@
 ---
 layout: post
 title:  "How to Use Azure Network Security Groups"
-date:   2025-02-15 22:38:11 +0000
-categories: New blog setup
-tags: [Network Security Group, Azure]
+date:   2025-02-15 22:38:11 -0600
+categories:
+  - Articles
+tags:
+  - Network Security Group
+  - Azure
 ---
 
 ## Intro
