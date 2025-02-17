@@ -137,9 +137,9 @@ author:
   location    : "Tulsa, OK, USA"
   url         : "https://www.seanwhitesell.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:seanw122@hotmail.com"
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope"
+    #   url: "mailto:seanw122@hotmail.com"
     - label: "Website"
       icon: "fa-solid fa-globe"
       url: "https://www.seanwhitesell.com"

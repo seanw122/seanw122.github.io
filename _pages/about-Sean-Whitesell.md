@@ -6,7 +6,9 @@ permalink: /about-sean-whitesell
 description: About Sean Whitesell, President of SkyForge Consulting, Microsoft MVP in Azure and Developer Technologies, Public Speaker, and Leader of Tulsa .NET User Group
 ---
 
-I’m Sean Whitesell. I am the current president of the Tulsa .NET User Group and have been since July 2009. I love being the president. It’s very exciting to help so many with similar interests gather for networking and growth in the programming field.
+I’m Sean Whitesell, President of SkyForge Consulting. I specialize in helping my clients migrate and make best use of the cloud, Azure in particular. I'm also a Microsoft MVP in the Azure and Dev Tech areas. I've been an MVP since 2020.
+
+I am the current president of the Tulsa .NET User Group and have been since July 2009. I love being the president. It’s very exciting to help so many with similar interests gather for networking and growth in the programming field.
 
 In 5th grade I had the opportunity of playing with LOGO. Very simple but a good introduction to kids at that time that we can control something on this so-called computer. In 1986 I was playing with the Apple II GS. “Where in the World is Carmen San Diego?” was a great game and I learned a lot. That Apple II GS got a ton of use.
 
