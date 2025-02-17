@@ -9,8 +9,6 @@ tags:
   - Azure
 ---
 
-## Intro
-
 There has been a lot of confusion around Azure's [Network Security Groups](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview?wt.mc_id=DT-MVP-5003848){:target="_blank"} "NSG". This post aims to explain details and hopefully alleviate misunderstandings as well as suggest some good ways to use NSGs. A bit of warning, this is not meant to be an introduction to NSGs so much as it is to explain some details and best uses.
 
 ## What is an Azure Network Security Group?

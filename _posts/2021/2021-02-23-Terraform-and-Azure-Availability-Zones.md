@@ -5,7 +5,6 @@ date:   2021-02-23 15:09:00 +0000
 categories: Terraform, Azure, Availability Zones
 ---
 
-## Intro
 While learning Terraform some time back, I wanted to leverage Availability Zones in Azure. I was specifically looking at Virtual Machine Scale Sets. [Terraform Azure Virtual Machine Scale Sets](https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_scale_set.html) Looking at the documentation Terraform has, I noticed there is no good example on using zones. So, I tried a few things to see what was really needed for that field. While doing some research, I noticed there are many people in the same situation. No good examples. I figured I'd create this post to help anyone else. And, of course, it's a good reminder for me too if I forget the syntax on how I did this.
 
 ## Body

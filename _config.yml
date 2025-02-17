@@ -45,17 +45,17 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-- jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-- jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-- jekyll-redirect-from
-- jekyll-gist
-- jekyll-include-cache
-# - jekyll-seo-tag
-# - jekyll-avatar
-# - jekyll-mentions
-# - jekyll-include-cache
-# - jemoji
+  - jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-redirect-from
+  - jekyll-gist
+  - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-avatar
+  - jekyll-mentions
+  - jekyll-include-cache
+  - jemoji
 
 show_downloads: true
 # google_analytics: [Your Google Analytics tracking ID]
@@ -102,18 +102,58 @@ defaults:
 paginate: 10 # number of posts to show
 paginate_path: /page:num/
 
+head_scripts:
+  - /assets/js/clarity.js
+
+author: 
+  name        : "Sean Whitesell"
+  bio         : >-
+    President of SkyForge Consulting, Microsoft MVP in Azure and Dev Tech, Public Speaker, and user group leader.
+  avatar      : "/assets/HeadShotNoBackground.png"
+  picture     : "/assets/HeadShotNoBackground.png"
+  location    : "Tulsa, OK, USA"
+  url         : "https://www.seanwhitesell.com"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:seanw122@hotmail.com"
+    - label: "Website"
+      icon: "fa-solid fa-globe"
+      url: "https://www.seanwhitesell.com"
+    - label: "X"
+      icon: "fab fa-fw fa-x-twitter"
+      url: "https://x.com/codewithseanw"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/seanw122"
+
+# Build settings
+markdown: kramdown
+show_excerpts: true
+repository: "jguadagno/jguadagno.github.io"
+include: ["_pages"]
+highlighter: rouge
+
+# Kramdown settings
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts: 
+    block:
+      line_numbers: true
+      start_line: 1
 
 
-# plugins:
-#   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-#   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-#   - jekyll-redirect-from
-#   - jekyll-gist
-#   - jekyll-seo-tag
-#   - jekyll-avatar
-#   - jekyll-mentions
-#   - jekyll-include-cache
-#   - jemoji
+exclude:
+  - todo.txt
+  - readme.md
+  - install.md
+  - docker-compose.yml 
+  - dockerfile
+  - .idea/
+  - .vscode/
+  - .devcontainer/
+  - .jekyll-metadata
+  - vendor/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
