@@ -55,5 +55,4 @@ Now the zones field can be used safely when the value is either a list of string
 
 This proved to me that I can use a region with and without availability zones in the same Terraform script.
 
-For a list of Azure regions with Availability Zones, see:
-<a href="https://docs.microsoft.com/en-us/azure/availability-zones/az-overview" target="_blank">Azure Availability Zones</a>
+For a list of Azure regions with Availability Zones, see: [Azure Availability Zones](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview){:target="_blank"}

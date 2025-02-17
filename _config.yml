@@ -163,16 +163,9 @@ kramdown:
 
 
 exclude:
-  - todo.txt
   - readme.md
-  - install.md
-  - docker-compose.yml 
-  - dockerfile
-  - .idea/
-  - .vscode/
-  - .devcontainer/
-  - .jekyll-metadata
-  - vendor/
+#  - .devcontainer/
+
 
 
 category_archive:
