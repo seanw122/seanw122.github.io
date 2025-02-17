@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title:  "Removing an Azure Application Gateway"
 date:   2021-02-23 15:09:00 +0000
 categories: PowerShell, Azure, Application Gateway

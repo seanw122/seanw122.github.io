@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title:  "How to Use Azure Network Security Groups"
 date:   2025-02-15 22:38:11 -0600
 categories:
@@ -11,13 +11,13 @@ tags:
 
 ## Intro
 
-There has been a lot of confusion around Azure's [Network Security Groups](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) "NSG". This post aims to explain details and hopefully alleviate misunderstandings as well as suggest some good ways to use NSGs. A bit of warning, this is not meant to be an introduction to NSGs so much as it is to explain some details and best uses.
+There has been a lot of confusion around Azure's [Network Security Groups](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview?wt.mc_id=DT-MVP-5003848){:target="_blank"} "NSG". This post aims to explain details and hopefully alleviate misunderstandings as well as suggest some good ways to use NSGs. A bit of warning, this is not meant to be an introduction to NSGs so much as it is to explain some details and best uses.
 
 ## What is an Azure Network Security Group?
 
-First off, let's cover what an NSG really is. They are a type of firewall for layer 3 and 4 traffic. The *layer 3 and 4* is referring to the [Open Systems Interconnection](https://en.wikipedia.org/wiki/OSI_model) model. Layer 3, the Network Layer, is for Internet Protocol "IP" addresses such as 192.168.0.1. Layer 4, the Transport Layer, is for protocols like TCP, UDP, ICMP, and others.
+First off, let's cover what an NSG really is. They are a type of firewall for layer 3 and 4 traffic. The *layer 3 and 4* is referring to the [Open Systems Interconnection](https://en.wikipedia.org/wiki/OSI_model){:target="_blank"} model. Layer 3, the Network Layer, is for Internet Protocol "IP" addresses such as 192.168.0.1. Layer 4, the Transport Layer, is for protocols like TCP, UDP, ICMP, and others.
 
-An NSG provides firewall functionality on these two layers. Each rule can work with a single IP address or a range of IP addresses. You can also specify ports and even [Azure Service Tags](https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview). Each rule has a priority and is processed in order. If one rule allows some traffic but another rule of higher priority denies the traffic then traffic is denied because of that priority. There are cases where one rule can allow a range while another rule denies a specific IP address. The traffic allowed or denied is still based on the priority and not specificity.
+An NSG provides firewall functionality on these two layers. Each rule can work with a single IP address or a range of IP addresses. You can also specify ports and even [Azure Service Tags](https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview?wt.mc_id=DT-MVP-5003848){:target="_blank"}. Each rule has a priority and is processed in order. If one rule allows some traffic but another rule of higher priority denies the traffic then traffic is denied because of that priority. There are cases where one rule can allow a range while another rule denies a specific IP address. The traffic allowed or denied is still based on the priority and not specificity.
 
 <!-- Don't forget to mention the VirtualNetowrk service tag -->
 
@@ -130,13 +130,16 @@ Action = Allow
 
 Wait! Don't we already have a rule with that priority? Yes, we do. However, the list of Inbound and Outbound rules are independent of each other. So, it's ok to have matching rule priority numbers as the are not conflicting.
 
-> **Tip:** You can get your public IP address by executing `curl ifconfig.me`
+> **Tip:** You can get your public IP address by executing:
+>
+> `curl ifconfig.me`
 
 ## Associating an NSG to NICs
 
 While you technically can associate an NSG to a NIC it's not advised. If you have a rule that is applicable to an associated subnet and another to an associated NIC, you do *not* get more security. The reason it's advised to not associate an NSG to a NIC is simply to due to management of the rules. In a larger environment, you're more likely to want to apply rules that affect multiple NICs on the same subnet. This is much easier than creating multiple rules that seem like duplicates each to a single NIC.
 
-> **Note:** Have you noticed that I refer to NICs and not VMs? This is because the NSG rules apply to all NICs even those of Private Endpoints.
+**Note:** Have you noticed that I refer to NICs and not VMs? This is because the NSG rules apply to all NICs even those of Private Endpoints.
+{: .notice}
 
 ## Reply Traffic
 
@@ -148,7 +151,7 @@ When I was first learning about Azure networking I thought an NSG provided somet
 
 The truth is, there is no virtual network! Every bit of information about VNet, subnet, routing, DNS, and NSG rules are explicitly applied to all of the NICs of the associated subnet(s). So when an NSG rule is for a subnet, it's really being applied to each NIC on that subnet! Blocking SSH in a rule to a subnet means each NIC in that subnet has that block.
 
-In reality, the NICs are simply programs running on an [FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array)  chip. Even the server that is "virtual" is made to believe, at the OS level, that the NIC is a real piece of hardware. It's just code.
+In reality, the NICs are simply programs running on an [FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array){:target="_blank"} chip. Even the server that is "virtual" is made to believe, at the OS level, that the NIC is a real piece of hardware. It's just code.
 
 This also explains why you cannot simply move a VM to another VNet. You can change association to another subnet but to move to another VNet requires several underlying things to be recreated. At this time, it's just not possible.
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title:  "Terraform + Azure Availability Zones"
 date:   2021-02-23 15:09:00 +0000
 categories: Terraform, Azure, Availability Zones

@@ -40,20 +40,24 @@ permalink: /:year/:month/:day/:title
 # plugins:
 #  - jekyll-feed
 
-remote_theme: pages-themes/hacker@v0.2.0
+remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# remote_theme: pages-themes/hacker@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
 - jekyll-redirect-from
-# - jekyll-gist
+- jekyll-gist
+- jekyll-include-cache
 # - jekyll-seo-tag
 # - jekyll-avatar
 # - jekyll-mentions
 # - jekyll-include-cache
 # - jemoji
 
-show_downloads: false
+show_downloads: true
 # google_analytics: [Your Google Analytics tracking ID]
 github:
   repository_url: ""
@@ -61,6 +65,44 @@ github:
 
 include:
   - "_pages"
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      classes: wide
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      share: true
+      classes : wide
+      author_profile: true
+  # _presentations
+  - scope:
+      path: ""
+      type: presentations
+    values:
+      layout: presentation
+      share: true
+      classes : wide
+      author_profile: true
+
+paginate: 10 # number of posts to show
+paginate_path: /page:num/
+
+
 
 # plugins:
 #   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
