@@ -33,7 +33,7 @@ When an NSG is associated with the subnet, the rules then apply to all traffic i
 
 In an NSG, rules are either inbound or outbound and have a Source and a Destination. If a rule is inbound and has a destination IP of that of an associated subnet, then the inbound network traffic is subjected to this rule. Consider this rule in our example.
 
-{% highlight verilog %}
+``` verilog
 Priority = 1001
 Direction = Inbound
 Source = Any
@@ -41,11 +41,11 @@ Source Port = Any
 Destination = 192.168.0.5
 Destination Port = 22
 Action = Allow
-{% endhighlight %}
+```
 
 This rule is stating that traffic coming from *Any* source that is destined to *192.168.0.5* on port *22* will be allowed. Now let's add another rule. This time the rule is to deny all traffic bound to the same destination regardless of destination port.
 
-{% highlight verilog %}
+``` verilog
 Priority = 1000
 Direction = Inbound
 Source = Any
@@ -53,7 +53,7 @@ Source Port = Any
 Destination = 192.168.0.5
 Destination Port = Any
 Action = Deny
-{% endhighlight %}
+```
 
 The problem with this is that no traffic is getting to any port on that IP address. This is because the priority is set to a higher priority than the other rule allowing traffic to port 22. Priority 1000 is higher than 1001.
 
@@ -61,7 +61,7 @@ The problem with this is that no traffic is getting to any port on that IP addre
 
 So, for traffic to successfully reach *192.168.0.5* on port *22* we need to swap the priority.
 
-{% highlight verilog %}
+``` verilog
 Priority = 1000
 Direction = Inbound
 Source = Any
@@ -77,7 +77,7 @@ Source Port = Any
 Destination = 192.168.0.5
 Destination Port = Any
 Action = Deny
-{% endhighlight %}
+```
 
 Remember, the rules regarding the destination address of *192.168.0.5* are only applicable if the NSG is associated to the subnet range that includes that address, OR is directly associated to the NIC that has that address.
 
@@ -90,7 +90,7 @@ When creating a rule we need to understand where the traffic is originating and 
 
 Let's go through a quick example of a VM with a public IP address. You associate the NSG directly to the NIC of the VM. A quick note; this [not advised](#associating-an-nsg-to-nics) and I explain further down. The expectation is to allow yourself direct access from your home. Since the traffic will originate from your home we need to create an Inbound rule. For this example, let's assume that your home IP address is 1.2.3.4 and the IP address of the VMs public IP is 5.6.7.8. Create the rule as shown below and test.
 
-{% highlight verilog %}
+``` verilog
 Priority = 2000
 Direction = Inbound
 Source = 1.2.3.4
@@ -98,11 +98,11 @@ Source Port = Any
 Destination = 5.6.7.8
 Destination Port = 22
 Action = Allow
-{% endhighlight %}
+```
 
 Did you notice it didn't work? Most of the details are correct except for one. This is a big item to remember. Public IP address on a NIC are first converted to their private IP address before an NSG rule is applied. So, we need to change the rule to have the destination of the private IP address.
 
-{% highlight verilog %}
+``` verilog
 Priority = 2000
 Direction = Inbound
 Source = 1.2.3.4
@@ -110,13 +110,13 @@ Source Port = Any
 Destination = 192.168.0.5
 Destination Port = 22
 Action = Allow
-{% endhighlight %}
+```
 
 What if the traffic is originating from code running on the VM and needs to get to a public endpoint in the internet? For this, we'll create an Outbound rule. Why outbound? Because the traffic originates from inside the VNet it's direction is outbound. It doesn't make sense to have an Outbound rule with a Source of Internet so that rule will not be effective.
 
 An Outbound rule is created with a source IP of the NIC. The destination is to some random public IP for this example. Notice the destination port is 443 but the source port is *Any*. When web-based traffic occurs, it first starts with an agreement to further the conversation on an open source port. It's rare that you will set a source port. However, there are those special cases when there is tight control over that traffic. Web-based traffic is of the few types of conversations that leverage other open ports.
 
-{% highlight verilog %}
+``` verilog
 Priority = 2000
 Direction = Outbound
 Source = 192.168.0.5
@@ -124,7 +124,7 @@ Source Port = Any
 Destination = 15.16.17.18
 Destination Port = 443
 Action = Allow
-{% endhighlight %}
+```
 
 Wait! Don't we already have a rule with that priority? Yes, we do. However, the list of Inbound and Outbound rules are independent of each other. So, it's ok to have matching rule priority numbers as the are not conflicting.
 

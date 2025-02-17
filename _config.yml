@@ -105,6 +105,25 @@ paginate_path: /page:num/
 head_scripts:
   - /assets/js/clarity.js
 
+# TODO - Add Google Analytics
+# Analytics
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "G-HKYKNTCV88"
+#     anonymize_ip: false # default
+
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/codewithseanw"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/seanw122"
+
+
 author: 
   name        : "Sean Whitesell"
   bio         : >-
@@ -154,6 +173,17 @@ exclude:
   - .devcontainer/
   - .jekyll-metadata
   - vendor/
+
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+year_archive:
+  type: liquid
+  path: /year-archive/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
