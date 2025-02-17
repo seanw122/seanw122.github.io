@@ -2,6 +2,15 @@ main:
     - title: "About Me"
       url: /about-sean-whitesell
       description: "About Sean Whitesell"
+    - title: "Presentations"
+      url: /presentations
+      description: "Topics/Presentations that Joseph Guadagno can present"
+    - title: "Speaking"
+      url: /speaking-engagements
+      description: "Events that Joseph Guadagno will be speaking, or has spoken, at"
+    - title: "Contact"
+      url: /contact
+      description: "Contact Joseph Guadagno"
     - title: "Categories"
       url: /categories
       description: "See all the posts by categories"
